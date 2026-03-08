@@ -15,9 +15,7 @@ def convert(visdrone_ann_dir, output_label_dir, img_width, img_height):
                 category = int(parts[5])
 
                 if category not in PERSON_CLASSES:
-                    continue  # skip non-person objects
-
-                # Convert to YOLO format (normalized center x, center y, w, h)
+                    continue
                 cx = (x + w / 2) / img_width
                 cy = (y + h / 2) / img_height
                 nw = w / img_width
